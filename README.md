@@ -1,4 +1,6 @@
 # corp-map
+A hierarchical and radial view of corporation structures.
+
 ## To Do
 * Fix image sizing
 * Fix border spacing

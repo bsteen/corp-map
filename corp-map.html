@@ -33,17 +33,17 @@
 			
 			var nodes = [];		// Create a data table with nodes.
 			var edges = [];		// Create a data table with links; Lines between nodes.
-			var LOGO_DIR = "logos/";
+			var LOGO_DIR = "logos/";  // Change these to Wikipedia URLs
 			
 			// Add images and make structure/connections
-			nodes.push({id: 1, label: "AT&T Inc.", image: LOGO_DIR + "AT&T_logo_2016.svg", shape: "image"});
+			nodes.push({id: 1, label: "AT&T Inc.", image: LOGO_DIR + "AT&T.svg", shape: "image"});
 			nodes.push({id: 2, label: "Warner Media, LLC", image: LOGO_DIR + "WarnerMedia.svg", shape: "image"});
 			edges.push({from: 1, to: 2, length: 0});
 			
-			nodes.push({id: 3, label: "Home Box Office, Inc.", image: LOGO_DIR + "HBO_logo.svg", shape: "image"});
-			nodes.push({id: 4, label: "Otter Media Holdings, LLC", image: LOGO_DIR + "Otter_Media_logo.png", shape: "image"});
-			nodes.push({id: 5, label: "Turner Broadcasting System, Inc.", image: LOGO_DIR + "Turner_Broadcasting_System_2015.svg", shape: "image"});
-			nodes.push({id: 6, label: "Warner Bros. Entertainment Inc.", image: LOGO_DIR + "Warner_Bros_logo.svg", shape: "image"});
+			nodes.push({id: 3, label: "Home Box Office, Inc.", image: LOGO_DIR + "HBO.svg", shape: "image"});
+			nodes.push({id: 4, label: "Otter Media Holdings, LLC", image: LOGO_DIR + "Otter_Media.png", shape: "image"});
+			nodes.push({id: 5, label: "Turner Broadcasting System, Inc.", image: LOGO_DIR + "Turner_Broadcasting_Systems.svg", shape: "image"});
+			nodes.push({id: 6, label: "Warner Bros. Entertainment Inc.", image: LOGO_DIR + "Warner_Bros.svg", shape: "image"});
 			edges.push({from: 2, to: 3, length: 0});
 			edges.push({from: 2, to: 4, length: 0});
 			edges.push({from: 2, to: 5, length: 0});
