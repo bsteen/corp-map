@@ -1,0 +1,134 @@
+<!doctype html>
+<meta charset="UTF-8">
+<html>
+<title>AT&T Corporate Structure | Hierarchical layout</title>
+<head>
+	<style type="text/css">
+		body {
+			font: 10pt sans;
+		}
+
+		#mynetwork {
+			width: 1200px;
+			height: 600px;
+			border: 1px solid lightgray;
+		}
+	</style>
+
+	<script type="text/javascript" src="vis-4.21.0/dist/vis.js"></script>
+	<link href="vis-4.21.0/dist/vis-network.min.css" rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript">
+		var network = null;
+		
+		// Load the JSON data
+		function loadData() 
+		{
+			var request = new XMLHttpRequest();
+			request.open("GET", "company_structs/ATandT.json")
+			request.responseType = "json";
+			request.send();
+		
+			// When the request returns, draw map
+			request.onload = function()
+			{
+				var company_struct = request.response;
+				draw(company_struct);
+			}
+		}
+
+		function destroy()
+		{
+			if (network !== null) 
+			{
+				network.destroy();
+				network = null;
+			}
+		}
+		
+		function draw(company_struct)
+		{
+			destroy();
+			
+			var nodes = [];				// Create a data table with nodes.
+			var edges = [];				// Create a data table with links; Lines between nodes.
+			var name_idx = new Array();	// Company name and node index pair, used for connecting parent to children via index instead of name
+			var LOGO_DIR = "logos/";  	// Change these to Wikipedia URLs
+			
+			// Create map nodes
+			for (var i = 0; i < company_struct.length; i++)
+			{
+				if  (company_struct[i].size != -1)
+				{
+					nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo, shape: "image", size: company_struct[i].size});
+				}
+				else 
+				{
+					nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo, shape: "image"});
+				}
+				
+				name_idx[company_struct[i].name] = i;
+				
+			}
+			
+			// Make connections between parent and children nodes
+			var child_index = -1
+			for (var i = 0; i < company_struct.length; i++)
+			{
+				if (company_struct[i].children.length != 0)
+				{
+					for (var j = 0; j < company_struct[i].children.length; j++)
+					{
+						child_index = name_idx[company_struct[i].children[j]]
+						edges.push({from: i, to: child_index, length: 0});
+					}
+				}
+			}
+
+			// Now create a network
+			var container = document.getElementById('mynetwork');
+			var data = {
+				nodes: nodes,
+				edges: edges
+			};
+			var options = {
+				physics : false,
+				layout: {
+					hierarchical: {
+						enabled: true,
+						direction: "UD",
+						nodeSpacing: 300
+					}
+				},
+				nodes: {				// http://visjs.org/docs/network/nodes.html
+					font: {
+						color: '#000000' // node label text color
+					},
+					widthConstraint: {
+						maximum: 130	// width for node label text
+					},
+					color: {			// Image box and line colors
+						border: '#2E2E2E',
+						background: '#FFFFFF',
+						highlight: {
+							border: '#2E2E2E',
+							background: '#D2E5FF'
+						}
+					},
+					shapeProperties: {
+						useImageSize: false,
+						useBorderWithImage: true,
+						borderDashes: false
+					}
+				}
+			};
+			network = new vis.Network(container, data, options);
+		}
+	</script>
+</head>
+
+<h2>AT&T Corporate Structure | Hierarchical layout</h2>
+<body onload="loadData();">
+	<div id="mynetwork"></div>
+</body>
+</html>
