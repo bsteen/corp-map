@@ -2,7 +2,8 @@
 A hierarchical and radial view of corporation structures.
 
 ## To Do
-* Fix image sizing
+* Load image connections from file
+* Make area change size with screen size
 * Fix border spacing
 * Have text inside border
 * Get node physics working
