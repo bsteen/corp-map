@@ -9,6 +9,8 @@ A hierarchical and radial view of corporation structures.
 * Have text inside border
 * Get node physics working
 * Add radial map
+* Update bsteen.io links
+* Clean up vis-js folder
 
 ## companies.json format
 * Each root company has its own JSON file
