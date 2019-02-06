@@ -11,6 +11,7 @@ A hierarchical and radial view of corporation structures.
 * Add radial map
 * Update bsteen.io links
 * Clean up vis-js folder
+* Begin investigating web crawling
 
 ## companies.json format
 * Each root company has its own JSON file
