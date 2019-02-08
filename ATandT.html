@@ -20,15 +20,15 @@
 
 	<script type="text/javascript">
 		var network = null;
-		
+
 		// Load the JSON data
-		function loadData() 
+		function loadData()
 		{
 			var request = new XMLHttpRequest();
 			request.open("GET", "company_structs/ATandT.json")
 			request.responseType = "json";
 			request.send();
-		
+
 			// When the request returns, draw map
 			request.onload = function()
 			{
@@ -39,30 +39,30 @@
 
 		function destroy()
 		{
-			if (network !== null) 
+			if (network !== null)
 			{
 				network.destroy();
 				network = null;
 			}
 		}
-		
+
 		function draw(company_struct)
 		{
 			destroy();
-			
+
 			var nodes = [];				// Create a data table with nodes.
 			var edges = [];				// Create a data table with links; Lines between nodes.
 			var name_idx = new Array();	// Company name and node index pair, used for connecting parent to children via index instead of name
 			var LOGO_DIR = "logos/";  	// Change these to Wikipedia URLs
-			
+
 			// Create map nodes
 			for (var i = 0; i < company_struct.length; i++)
 			{
 				nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo});
 				name_idx[company_struct[i].name] = i;
-				
+
 			}
-			
+
 			// Make connections between parent and children nodes
 			var child_index = -1
 			for (var i = 0; i < company_struct.length; i++)
@@ -79,37 +79,42 @@
 
 			// Now create a network
 			var container = document.getElementById('mynetwork');
-			var data = {
+			var data = 
+			{
 				nodes: nodes,
 				edges: edges
 			};
-			var options = {
+			var options =
+			{
 				physics: true,
-				layout: {
-					hierarchical: {
+				layout:
+				{
+					hierarchical:
+					{
 						enabled: true,
 						direction: "UD"
 					}
 				},
-				nodes: {				// http://visjs.org/docs/network/nodes.html
+				nodes: // http://visjs.org/docs/network/nodes.html
+				{
 					shape: "circularImage",
 					size: 35,
-					shapeProperties: 
+					color: 	// Image box and line colors
 					{
-						
-					},
-					color: {			// Image box and line colors
 						border: '#2E2E2E',
 						background: '#FFFFFF',
-						highlight: {
+						highlight:
+						{
 							border: '#2E2E2E',
 							background: '#D2E5FF'
 						}
 					},
-					font: {
+					font:
+					{
 						color: '#000000' // node label text color
 					},
-					widthConstraint: {
+					widthConstraint:
+					{
 						maximum: 130	// width for node label text
 					}
 				}
