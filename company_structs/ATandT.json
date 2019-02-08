@@ -2,7 +2,6 @@
 	{
 		"name":"AT&T Inc.",
 		"logo":"AT&T.svg",
-		"size":"50",
 		"children":
 		[
 			"Warner Media, LLC"
@@ -11,7 +10,6 @@
 	{
 		"name":"Warner Media, LLC",
 		"logo":"WarnerMedia.svg",
-		"size":"20",
 		"children":
 		[
 			"Home Box Office, Inc.",
@@ -23,7 +21,6 @@
 	{
 		"name":"Home Box Office, Inc.",
 		"logo":"HBO.svg",
-		"size":"-1",
 		"children":
 		[
 			""
@@ -32,7 +29,6 @@
 	{
 		"name":"Otter Media Holdings, LLC",
 		"logo":"Otter_Media.png",
-		"size":"-1",
 		"children":
 		[
 			""
@@ -41,7 +37,6 @@
 	{
 		"name":"Turner Broadcasting System, Inc.",
 		"logo":"Turner_Broadcasting_Systems.svg",
-		"size":"-1",
 		"children":
 		[
 			""
@@ -50,7 +45,6 @@
 	{
 		"name":"Warner Bros. Entertainment Inc.",
 		"logo":"Warner_Bros.svg",
-		"size":"-1",
 		"children":
 		[
 			""
