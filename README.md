@@ -2,10 +2,13 @@
 A hierarchical and radial view of corporation structures.
 
 ## To Do
+* Make spacing better
+* Fix click issue
 * Finish AT&T structure
 * Format index.html
 * Move Javascript to different file
-* Separate files for each company page
+* Bring up more info on click (full logo, name, net worth, website, !!FUN!! facts)
+* Add more root companies
 * Make a logo for the site
 * Make area change size with screen size
 * Make logos fit inside fixed size boxes
