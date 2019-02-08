@@ -22,10 +22,10 @@
 		var network = null;
 
 		// Load the JSON data
-		function loadData()
+		function loadData(root_co_name)
 		{
 			var request = new XMLHttpRequest();
-			request.open("GET", "company_structs/ATandT.json")
+			request.open("GET", "company_structs/" + root_co_name + ".json")
 			request.responseType = "json";
 			request.send();
 
@@ -33,7 +33,7 @@
 			request.onload = function()
 			{
 				var company_struct = request.response;
-				draw(company_struct);
+				draw(company_struct, root_co_name);
 			}
 		}
 
@@ -46,19 +46,20 @@
 			}
 		}
 
-		function draw(company_struct)
+		function draw(company_struct, root_co_name)
 		{
 			destroy();
 
 			var nodes = [];				// Create a data table with nodes.
 			var edges = [];				// Create a data table with links; Lines between nodes.
 			var name_idx = new Array();	// Company name and node index pair, used for connecting parent to children via index instead of name
-			var LOGO_DIR = "logos/";  	// Change these to Wikipedia URLs
+			var LOGO_DIR = "logos/" + root_co_name + "/";
+			var MISSING_LOGO = "logos/missing_logo.png";
 
 			// Create map nodes
 			for (var i = 0; i < company_struct.length; i++)
 			{
-				nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo});
+				nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo, brokenImage: MISSING_LOGO});
 				name_idx[company_struct[i].name] = i;
 
 			}
@@ -125,7 +126,7 @@
 </head>
 
 <h2>AT&T Corporate Structure | Hierarchical layout</h2>
-<body onload="loadData();">
+<body onload="loadData('ATandT');">
 	<div id="mynetwork"></div>
 </body>
 </html>
