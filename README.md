@@ -2,8 +2,11 @@
 A hierarchical and radial view of corporation structures.
 
 ## To Do
+* Finish AT&T structure
+* Format index.html
 * Move Javascript to different file
 * Separate files for each company page
+* Make a logo for the site
 * Make area change size with screen size
 * Make logos fit inside fixed size boxes
 * Add radial map
