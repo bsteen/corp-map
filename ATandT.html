@@ -58,15 +58,7 @@
 			// Create map nodes
 			for (var i = 0; i < company_struct.length; i++)
 			{
-				if  (company_struct[i].size != -1)
-				{
-					nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo, shape: "image", size: company_struct[i].size});
-				}
-				else 
-				{
-					nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo, shape: "image"});
-				}
-				
+				nodes.push({id: i, label: company_struct[i].name, image: LOGO_DIR + company_struct[i].logo});
 				name_idx[company_struct[i].name] = i;
 				
 			}
@@ -92,20 +84,19 @@
 				edges: edges
 			};
 			var options = {
-				physics : false,
+				physics: true,
 				layout: {
 					hierarchical: {
 						enabled: true,
-						direction: "UD",
-						nodeSpacing: 300
+						direction: "UD"
 					}
 				},
 				nodes: {				// http://visjs.org/docs/network/nodes.html
-					font: {
-						color: '#000000' // node label text color
-					},
-					widthConstraint: {
-						maximum: 130	// width for node label text
+					shape: "circularImage",
+					size: 35,
+					shapeProperties: 
+					{
+						
 					},
 					color: {			// Image box and line colors
 						border: '#2E2E2E',
@@ -115,10 +106,11 @@
 							background: '#D2E5FF'
 						}
 					},
-					shapeProperties: {
-						useImageSize: false,
-						useBorderWithImage: true,
-						borderDashes: false
+					font: {
+						color: '#000000' // node label text color
+					},
+					widthConstraint: {
+						maximum: 130	// width for node label text
 					}
 				}
 			};
