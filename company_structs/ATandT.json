@@ -31,7 +31,13 @@
 		"logo":"Otter_Media.png",
 		"children":
 		[
-			""
+			"Crunchyroll",
+			"VRV",
+			"Fullscreen, Inc.",
+			"Rooster Teeth Productions, LLC",
+			"Hello Sunshine",
+			"Gunpowder & Sky",
+			"Ellation Studios"
 		]
 	},
 	{
@@ -45,6 +51,62 @@
 	{
 		"name":"Warner Bros. Entertainment Inc.",
 		"logo":"Warner_Bros.svg",
+		"children":
+		[
+			""
+		]
+	},
+	{
+		"name":"Crunchyroll",
+		"logo":"Crunchyroll.svg",
+		"children":
+		[
+			""
+		]
+	},
+	{
+		"name":"VRV",
+		"logo":"VRV.svg",
+		"children":
+		[
+			""
+		]
+	},
+		{
+		"name":"Fullscreen, Inc.",
+		"logo":"Fullscreen.svg",
+		"children":
+		[
+			""
+		]
+	},
+		{
+		"name":"Rooster Teeth Productions, LLC",
+		"logo":"Rooster_Teeth.svg",
+		"children":
+		[
+			""
+		]
+	},
+		{
+		"name":"Hello Sunshine",
+		"logo":"Hello_Sunshine.svg",
+		"children":
+		[
+			""
+		]
+	},
+		{
+		"name":"Gunpowder & Sky",
+		"logo":"Gunpowder_and_Sky.png",
+		"children":
+		[
+			""
+		]
+	},
+		{
+		"name":"Ellation Studios",
+		"logo":"Ellation_Studios.png",
 		"children":
 		[
 			""
