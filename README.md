@@ -5,9 +5,7 @@ A hierarchical and radial view of corporation structures.
 * Move Javascript to different file
 * Separate files for each company page
 * Make area change size with screen size
-* Fix border spacing
-* Have text inside border
-* Get node physics working
+* Make logos fit inside fixed size boxes
 * Add radial map
 * Update bsteen.io links
 * Clean up vis-js folder
