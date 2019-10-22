@@ -1,115 +1,116 @@
-[
-	{
+{
+	"att": {
 		"name":"AT&T Inc.",
 		"logo":"AT&T.svg",
 		"children":
 		[
-			"Warner Media, LLC"
-		]
+			"warner_media"
+		],
+		"level":0
 	},
-	{
+	"warner_media":	{
 		"name":"Warner Media, LLC",
 		"logo":"WarnerMedia.svg",
 		"children":
 		[
-			"Home Box Office, Inc.",
-			"Otter Media Holdings, LLC",
-			"Turner Broadcasting System, Inc.",
-			"Warner Bros. Entertainment Inc."
+			"hbo",
+			"otter_media",
+			"turner_broad",
+			"wb_entertainment"
 		]
 	},
-	{
+	"hbo": {
 		"name":"Home Box Office, Inc.",
 		"logo":"HBO.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-	{
+	"otter_media": {
 		"name":"Otter Media Holdings, LLC",
 		"logo":"Otter_Media.png",
 		"children":
 		[
-			"Crunchyroll",
-			"VRV",
-			"Fullscreen, Inc.",
-			"Rooster Teeth Productions, LLC",
-			"Hello Sunshine",
-			"Gunpowder & Sky",
-			"Ellation Studios"
+			"crunchyroll",
+			"vrv",
+			"fullscreen_inc",
+			"rooster_teeth_prod",
+			"hello_sunshine",
+			"gunpowder_and_sky",
+			"ellation_studios"
 		]
 	},
-	{
+	"turner_broad": {
 		"name":"Turner Broadcasting System, Inc.",
 		"logo":"Turner_Broadcasting_Systems.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-	{
+	"wb_entertainment":{
 		"name":"Warner Bros. Entertainment Inc.",
 		"logo":"Warner_Bros.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-	{
+	"crunchyroll": {
 		"name":"Crunchyroll",
 		"logo":"Crunchyroll.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-	{
+	"vrv": {
 		"name":"VRV",
 		"logo":"VRV.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-		{
+	"fullscreen_inc": {
 		"name":"Fullscreen, Inc.",
 		"logo":"Fullscreen.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-		{
+	"rooster_teeth_prod": {
 		"name":"Rooster Teeth Productions, LLC",
 		"logo":"Rooster_Teeth.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-		{
+	"hello_sunshine": {
 		"name":"Hello Sunshine",
 		"logo":"Hello_Sunshine.svg",
 		"children":
 		[
-			""
+			
 		]
 	},
-		{
+	"gunpowder_and_sky": {
 		"name":"Gunpowder & Sky",
 		"logo":"Gunpowder_and_Sky.png",
 		"children":
 		[
-			""
+			
 		]
 	},
-		{
+	"ellation_studios": {
 		"name":"Ellation Studios",
 		"logo":"Ellation_Studios.png",
 		"children":
 		[
-			""
+			
 		]
 	}
-]
+}
